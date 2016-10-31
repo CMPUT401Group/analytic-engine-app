@@ -14,12 +14,12 @@
   },
 
   "info": {
-    "description": "Example app for Grafana",
+    "description": "Grafana front end for analytic engine",
     "author": {
-      "name": "Raintank",
+      "name": "Joey Andres",
       "url": "http://raintank.io"
     },
-    "keywords": ["example app"],
+    "keywords": ["analytic engine"],
     "logos": {
       "small": "img/small_logo.png",
       "large": "img/large_logo.png"

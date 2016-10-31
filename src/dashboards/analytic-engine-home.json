@@ -1,13 +1,11 @@
 {
   "id": null,
-  "title": "Example App Dashboard",
-  "originalTitle": "Example App Dashboard",
-  "tags": [
-    "example-app", "imported"
-  ],
+  "title": "Analytic Engine: Home",
+  "originalTitle": "Analytic Engine: Home",
+  "tags": [],
   "style": "dark",
   "timezone": "browser",
-  "editable": true,
+  "editable": false,
   "hideControls": true,
   "sharedCrosshair": false,
   "rows": [

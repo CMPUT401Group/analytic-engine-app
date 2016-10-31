@@ -1,13 +1,13 @@
-<h3 class="page-heading">Analytic Engine App Config!</h3>
+<h3 class="page-heading">Analytic Engine App Config</h3>
 
 <div class="gf-form-group">
 	<div class="gf-form-inline">
 		<div class="gf-form">
-			<span class="gf-form-label">json Data property</span>
-			<input type="text" class="gf-form-input" ng-model="ctrl.appModel.jsonData.customText" >
+			<span class="gf-form-label">Analytic Engine Server url</span>
+			<input type="text" class="gf-form-input" ng-model="ctrl.appModel.analyticEngineURL" >
 		</div>
-		<div class="gf-form">
-			<editor-checkbox text="Custom value" model="ctrl.appModel.jsonData.customCheckbox"></editor-checkbox>
+		<div ng-if="!ctrl.validKey && ctrl.errorMsg">
+			<div class="alert alert-error"><div class="alert-title ng-binding">Error</div><div>{{ctrl.errorMsg}}</div></div>
 		</div>
 	</div>
 </div>

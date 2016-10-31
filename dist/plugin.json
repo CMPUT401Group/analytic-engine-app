@@ -33,7 +33,7 @@
   },
 
   "includes": [
-    {"type": "dashboard", "name": "Analytic Engine App Dashboard", "path": "dashboards/example_app_dashboard.json"},
+    {"type": "dashboard", "name": "Analytic Engine App Dashboard", "path": "dashboards/analytic-engine-home.json"},
     {"type": "panel", "name": "Analytic Engine App Panel"},
     {"type": "datasource", "name": "Analytic Engine App Datasource"}
   ],

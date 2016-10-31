@@ -3,7 +3,7 @@
 System.register([], function (_export, _context) {
   "use strict";
 
-  var _createClass, ExampleAppDatasource;
+  var _createClass, AnalyticEngineAppDatasource;
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -32,12 +32,12 @@ System.register([], function (_export, _context) {
         };
       }();
 
-      ExampleAppDatasource = function () {
-        function ExampleAppDatasource() {
-          _classCallCheck(this, ExampleAppDatasource);
+      AnalyticEngineAppDatasource = function () {
+        function AnalyticEngineAppDatasource() {
+          _classCallCheck(this, AnalyticEngineAppDatasource);
         }
 
-        _createClass(ExampleAppDatasource, [{
+        _createClass(AnalyticEngineAppDatasource, [{
           key: "query",
           value: function query(options) {
             return [];
@@ -49,10 +49,10 @@ System.register([], function (_export, _context) {
           }
         }]);
 
-        return ExampleAppDatasource;
+        return AnalyticEngineAppDatasource;
       }();
 
-      _export("default", ExampleAppDatasource);
+      _export("default", AnalyticEngineAppDatasource);
     }
   };
 });

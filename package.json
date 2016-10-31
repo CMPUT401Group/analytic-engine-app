@@ -1,7 +1,7 @@
 {
   "name": "analytic-engine-app",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/grafana/example-app.git"
+    "url": "https://github.com/CMPUT401Group/analytic-engine-app.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/grafana/example-app/issues"
+    "url": "https://github.com/CMPUT401Group/analytic-engine-app/issues"
   },
   "devDependencies": {
     "babel": "~6.5.1",
@@ -34,5 +34,5 @@
     "babel-preset-es2015": "^6.5.0",
     "lodash": "~4.0.0"
   },
-  "homepage": "https://github.com/grafana/example-app"
+  "homepage": "https://github.com/CMPUT401Group/analytic-engine-app"
 }

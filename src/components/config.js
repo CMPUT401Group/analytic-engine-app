@@ -1,7 +1,7 @@
 
-export class ExampleAppConfigCtrl {
+export class AnalyticEngineAppConfigCtrl {
   constructor() { }
 }
-ExampleAppConfigCtrl.templateUrl = 'components/config.html';
+AnalyticEngineAppConfigCtrl.templateUrl = 'components/config.html';
 
 

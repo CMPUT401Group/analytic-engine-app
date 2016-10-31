@@ -25,17 +25,17 @@
       "large": "img/large_logo.png"
     },
     "links": [
-      {"name": "Project site", "url": "https://github.com/grafana/example-app"},
-      {"name": "License & Terms", "url": "https://github.com/grafana/example-app/blob/master/LICENSE"}
+      {"name": "Project site", "url": "https://github.com/CMPUT401Group/analytic-engine-app"},
+      {"name": "License & Terms", "url": "https://github.com/CMPUT401Group/analytic-engine-app/blob/master/LICENSE"}
     ],
-    "version": "1.0.2",
-    "updated": "2015-06-06"
+    "version": "1.0.3",
+    "updated": "2016-10-31"
   },
 
   "includes": [
-    {"type": "dashboard", "name": "Example App Dashboard", "path": "dashboards/example_app_dashboard.json"},
-    {"type": "panel", "name": "Example App Panel"},
-    {"type": "datasource", "name": "Example App Datasource"}
+    {"type": "dashboard", "name": "Analytic Engine App Dashboard", "path": "dashboards/example_app_dashboard.json"},
+    {"type": "panel", "name": "Analytic Engine App Panel"},
+    {"type": "datasource", "name": "Analytic Engine App Datasource"}
   ],
 
   "dependencies": {

@@ -1,4 +1,4 @@
-export default class ExampleAppDatasource {
+export default class AnalyticEngineAppDatasource {
 
   constructor() {}
 

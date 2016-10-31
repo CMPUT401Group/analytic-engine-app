@@ -1,31 +1,31 @@
 'use strict';
 
 System.register(['./datasource'], function (_export, _context) {
-  "use strict";
+    "use strict";
 
-  var ExampleAppDatasource, ExampleAppConfigCtrl;
+    var AnalyticEngineAppDatasource, AnalyticEngineAppConfigCtrl;
 
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
+    function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+            throw new TypeError("Cannot call a class as a function");
+        }
     }
-  }
 
-  return {
-    setters: [function (_datasource) {
-      ExampleAppDatasource = _datasource.ExampleAppDatasource;
-    }],
-    execute: function () {
-      _export('ConfigCtrl', ExampleAppConfigCtrl = function ExampleAppConfigCtrl() {
-        _classCallCheck(this, ExampleAppConfigCtrl);
-      });
+    return {
+        setters: [function (_datasource) {
+            AnalyticEngineAppDatasource = _datasource.AnalyticEngineAppDatasource;
+        }],
+        execute: function () {
+            _export('ConfigCtrl', AnalyticEngineAppConfigCtrl = function AnalyticEngineAppConfigCtrl() {
+                _classCallCheck(this, AnalyticEngineAppConfigCtrl);
+            });
 
-      ExampleAppConfigCtrl.template = '<datasource-http-settings current="ctrl.current"></datasource-http-settings>';
+            AnalyticEngineAppDatasource.template = '<datasource-http-settings current="ctrl.current"></datasource-http-settings>';
 
-      _export('ExampleAppDatasource', ExampleAppDatasource);
+            _export('AnalyticEngineAppDatasource', AnalyticEngineAppDatasource);
 
-      _export('ConfigCtrl', ExampleAppConfigCtrl);
-    }
-  };
+            _export('ConfigCtrl', AnalyticEngineAppConfigCtrl);
+        }
+    };
 });
 //# sourceMappingURL=module.js.map

@@ -1,9 +1,9 @@
-import {ExampleAppDatasource} from  './datasource';
+import {AnalyticEngineAppDatasource} from  './datasource';
 
-class ExampleAppConfigCtrl {}
-ExampleAppConfigCtrl.template = '<datasource-http-settings current="ctrl.current"></datasource-http-settings>';
+class AnalyticEngineAppConfigCtrl {}
+AnalyticEngineAppDatasource.template = '<datasource-http-settings current="ctrl.current"></datasource-http-settings>';
 
 export {
-  ExampleAppDatasource,
-  ExampleAppConfigCtrl as ConfigCtrl
+    AnalyticEngineAppDatasource,
+    AnalyticEngineAppConfigCtrl as ConfigCtrl
 };

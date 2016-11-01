@@ -1,6 +1,6 @@
-"use strict";
+'use strict';
 
-System.register(["lodash"], function (_export, _context) {
+System.register(['lodash'], function (_export, _context) {
   "use strict";
 
   var _, _createClass, appName, AnalyticEngineAppConfigCtrl;
@@ -36,7 +36,7 @@ System.register(["lodash"], function (_export, _context) {
 
       appName = "Analytic Engine";
 
-      _export("AnalyticEngineAppConfigCtrl", AnalyticEngineAppConfigCtrl = function () {
+      _export('AnalyticEngineAppConfigCtrl', AnalyticEngineAppConfigCtrl = function () {
         function AnalyticEngineAppConfigCtrl($scope, $injector, $q, backendSrv, alertSrv) {
           _classCallCheck(this, AnalyticEngineAppConfigCtrl);
 
@@ -51,8 +51,10 @@ System.register(["lodash"], function (_export, _context) {
         }
 
         _createClass(AnalyticEngineAppConfigCtrl, [{
-          key: "preUpdate",
+          key: 'preUpdate',
           value: function preUpdate() {
+            console.log('Pre-Update');
+
             var model = this.appModel;
             if (!model.enabled) {
               return this.$q.resolve();
@@ -60,15 +62,16 @@ System.register(["lodash"], function (_export, _context) {
 
             if (!_.isString(model.analyticEngineURL)) {
               model.enabled = false;
-              this.errorMsg = appName + " Server URL not set";
+              this.errorMsg = appName + ' Server URL not set';
               return this.$q.reject(this.errorMsg);
             }
 
             return this.$q.resolve();
           }
         }, {
-          key: "postUpdate",
+          key: 'postUpdate',
           value: function postUpdate() {
+            console.log('Post-Update');
             if (!this.appModel.enabled) {
               return this.$q.resolve();
             }
@@ -87,7 +90,7 @@ System.register(["lodash"], function (_export, _context) {
         return AnalyticEngineAppConfigCtrl;
       }());
 
-      _export("AnalyticEngineAppConfigCtrl", AnalyticEngineAppConfigCtrl);
+      _export('AnalyticEngineAppConfigCtrl', AnalyticEngineAppConfigCtrl);
 
       AnalyticEngineAppConfigCtrl.templateUrl = 'components/config.html';
     }

@@ -31,7 +31,10 @@ export class AnalyticEngineAppConfigCtrl {
       analyticEngineURL: model.analyticEngineURL
     };
 
-    return this.$q.resolve();
+
+    return this.backendSrv.post('api/plugin-proxy/analytic-engine-app/config', appConfig).then((resp) => {
+      console.log('Analytic Engine config updated.');
+    });
   }
 
   postUpdate() {

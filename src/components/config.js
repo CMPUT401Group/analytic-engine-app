@@ -15,9 +15,7 @@ export class AnalyticEngineAppConfigCtrl {
   }
 
   preUpdate() {
-    console.log('Pre-Update');
-
-    var model = this.appModel;
+    let model = this.appModel;
     if (!model.enabled) {
       return this.$q.resolve();
     }
@@ -28,11 +26,15 @@ export class AnalyticEngineAppConfigCtrl {
       return this.$q.reject(this.errorMsg);
     }
 
+    console.log(model.analyticEngineURL);
+    let appConfig = {
+      analyticEngineURL: model.analyticEngineURL
+    };
+
     return this.$q.resolve();
   }
 
   postUpdate() {
-    console.log('Post-Update');
     if (!this.appModel.enabled) {
       return this.$q.resolve();
     }

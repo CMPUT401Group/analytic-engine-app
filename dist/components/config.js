@@ -76,13 +76,11 @@ System.register(['lodash'], function (_export, _context) {
               return this.$q.resolve();
             }
 
-            return this.$q.then(function () {
-              return self.appEditCtrl.importDashboards().then(function () {
-                return {
-                  url: "dashboard/db/analytic-engine-home",
-                  message: "worldPing app installed!"
-                };
-              });
+            return this.appEditCtrl.importDashboards().then(function () {
+              return {
+                url: "dashboard/db/analytic-engine-home",
+                message: "worldPing app installed!"
+              };
             });
           }
         }]);

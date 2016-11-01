@@ -37,13 +37,11 @@ export class AnalyticEngineAppConfigCtrl {
       return this.$q.resolve();
     }
 
-    return this.$q.then(() => {
-      return self.appEditCtrl.importDashboards().then(() => {
-        return {
-          url: "dashboard/db/analytic-engine-home",
-          message: "worldPing app installed!"
-        };
-      });
+    return this.appEditCtrl.importDashboards().then(() => {
+      return {
+        url: "dashboard/db/analytic-engine-home",
+        message: "worldPing app installed!"
+      };
     });
   }
 }

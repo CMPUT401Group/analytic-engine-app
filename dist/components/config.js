@@ -58,18 +58,14 @@ System.register(['lodash'], function (_export, _context) {
               return this.$q.resolve();
             }
 
-            if (!_.isString(model.analyticEngineURL)) {
+            if (!this._isValidateAnalyticEngineURL(model.jsonData.analyticEngineURL)) {
               model.enabled = false;
-              this.errorMsg = appName + ' Server URL not set';
+              this.errorMsg = appName + ' Server URL is not valid.';
               return this.$q.reject(this.errorMsg);
             }
 
-            console.log(model.analyticEngineURL);
-            var appConfig = {
-              analyticEngineURL: model.analyticEngineURL
-            };
-
-            return this.backendSrv.post('api/plugin-proxy/analytic-engine-app/config', appConfig).then(function (resp) {
+            var appConfig = { jsonData: model.jsonData };
+            return this.backendSrv.post('api/plugins/analytic-engine-app/settings', appConfig).then(function (resp) {
               console.log('Analytic Engine config updated.');
             });
           }
@@ -86,6 +82,18 @@ System.register(['lodash'], function (_export, _context) {
                 message: "worldPing app installed!"
               };
             });
+          }
+        }, {
+          key: 'getConfig',
+          value: function getConfig() {
+            return this.backendSrv.get('api/plugins/analytic-engine-app/settings').then(function (results) {
+              console.log(results);
+            });
+          }
+        }, {
+          key: '_isValidateAnalyticEngineURL',
+          value: function _isValidateAnalyticEngineURL(url) {
+            return _.isString(url);
           }
         }]);
 

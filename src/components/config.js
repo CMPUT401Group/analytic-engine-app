@@ -20,19 +20,14 @@ export class AnalyticEngineAppConfigCtrl {
       return this.$q.resolve();
     }
 
-    if (!_.isString(model.analyticEngineURL)) {
+    if (!this._isValidateAnalyticEngineURL(model.jsonData.analyticEngineURL)) {
       model.enabled = false;
-      this.errorMsg = `${appName} Server URL not set`;
+      this.errorMsg = `${appName} Server URL is not valid.`;
       return this.$q.reject(this.errorMsg);
     }
 
-    console.log(model.analyticEngineURL);
-    let appConfig = {
-      analyticEngineURL: model.analyticEngineURL
-    };
-
-
-    return this.backendSrv.post('api/plugin-proxy/analytic-engine-app/config', appConfig).then((resp) => {
+    let appConfig = {jsonData: model.jsonData};
+    return this.backendSrv.post('api/plugins/analytic-engine-app/settings', appConfig).then(resp => {
       console.log('Analytic Engine config updated.');
     });
   }
@@ -48,6 +43,16 @@ export class AnalyticEngineAppConfigCtrl {
         message: "worldPing app installed!"
       };
     });
+  }
+
+  getConfig() {
+    return this.backendSrv.get('api/plugins/analytic-engine-app/settings').then(results => {
+      console.log(results);
+    });
+  }
+
+  _isValidateAnalyticEngineURL(url) {
+    return _.isString(url);
   }
 }
 AnalyticEngineAppConfigCtrl.templateUrl = 'components/config.html';

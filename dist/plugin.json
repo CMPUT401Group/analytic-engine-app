@@ -1,7 +1,7 @@
 {
   "type": "app",
   "name": "Analytic Engine",
-  "id": "grafana-analytic-engine-app",
+  "id": "analytic-engine-app",
 
   "pages": [
     { "name": "Live stream", "component": "StreamPageCtrl", "role": "Editor"},

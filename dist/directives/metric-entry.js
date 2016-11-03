@@ -13,12 +13,15 @@ System.register(['lodash', 'angular'], function (_export, _context) {
     }],
     execute: function () {
 
-      angular.module('grafana.directives').directive("metricEntry", function () {
+      angular.module('grafana.directives').directive("metricEntry", function ($log) {
         return {
           templateUrl: 'public/plugins/analytic-engine-app/directives/metric-entry.html',
           scope: {
             name: '=',
             correlation: '='
+          },
+          link: function link(scope) {
+            $log.log(scope);
           }
         };
       });

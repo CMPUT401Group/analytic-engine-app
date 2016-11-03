@@ -1,6 +1,6 @@
 'use strict';
 
-System.register(['./components/logs', './components/stream', './components/config', 'directives/metric-entry'], function (_export, _context) {
+System.register(['./components/logs', './components/stream', './components/config', './directives/metric-entry'], function (_export, _context) {
   "use strict";
 
   var LogsPageCtrl, StreamPageCtrl, AnalyticEngineAppConfigCtrl;

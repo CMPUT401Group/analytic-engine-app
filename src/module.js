@@ -2,7 +2,7 @@ import {LogsPageCtrl} from './components/logs';
 import {StreamPageCtrl} from './components/stream';
 import {AnalyticEngineAppConfigCtrl} from './components/config';
 
-import 'directives/metric-entry';
+import './directives/metric-entry';
 
 export {
   AnalyticEngineAppConfigCtrl as ConfigCtrl,

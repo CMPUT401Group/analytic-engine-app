@@ -17,7 +17,7 @@ System.register(['lodash', 'angular'], function (_export, _context) {
         return {
           templateUrl: 'public/plugins/analytic-engine-app/directives/metric-entry.html',
           scope: {
-            name: '=',
+            metricName: '=',
             correlation: '='
           },
           link: function link(scope) {

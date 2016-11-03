@@ -52,7 +52,7 @@ System.register(['app/plugins/sdk', '../css/example-app.css!', '../directives/me
         return ExampleAppPanelCtrl;
       }(PanelCtrl));
 
-      ExampleAppPanelCtrl.template = '<h2 class="analytic-engine-app-heading"></h2>' + '<ol class="card-list" >' + '  <metric-entry></metric-entry>' + '  <metric-entry></metric-entry>' + '  <metric-entry></metric-entry>' + '  <metric-entry></metric-entry>' + '</ol>';
+      ExampleAppPanelCtrl.template = '<h2 class="analytic-engine-app-heading"></h2>' + '<div class="card-section card-list-layout-list">' + '  <ol class="card-list" >' + '    <metric-entry></metric-entry>' + '    <metric-entry></metric-entry>' + '    <metric-entry></metric-entry>' + '    <metric-entry></metric-entry>' + '  </ol>' + '</div>';
 
       _export('PanelCtrl', ExampleAppPanelCtrl);
     }

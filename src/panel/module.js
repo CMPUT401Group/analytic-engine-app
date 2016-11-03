@@ -11,12 +11,14 @@ class ExampleAppPanelCtrl extends PanelCtrl {
 
 }
 ExampleAppPanelCtrl.template = '<h2 class="analytic-engine-app-heading"></h2>' +
-  '<ol class="card-list" >' +
-  '  <metric-entry></metric-entry>' +
-  '  <metric-entry></metric-entry>' +
-  '  <metric-entry></metric-entry>' +
-  '  <metric-entry></metric-entry>' +
-  '</ol>';
+  '<div class="card-section card-list-layout-list">' +
+  '  <ol class="card-list" >' +
+  '    <metric-entry></metric-entry>' +
+  '    <metric-entry></metric-entry>' +
+  '    <metric-entry></metric-entry>' +
+  '    <metric-entry></metric-entry>' +
+  '  </ol>' +
+  '</div>';
 
 export {
   ExampleAppPanelCtrl as PanelCtrl

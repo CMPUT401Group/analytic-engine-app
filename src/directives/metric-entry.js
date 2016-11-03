@@ -8,8 +8,9 @@ angular.module('grafana.directives').directive("metricEntry", function($log) {
       metricName: '@',
       correlation: '@'
     },
+    replace: true,
     link(scope) {
-      $log.log(scope);
+
     }
   }
 });

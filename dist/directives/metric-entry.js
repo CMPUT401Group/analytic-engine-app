@@ -20,9 +20,8 @@ System.register(['lodash', 'angular'], function (_export, _context) {
             metricName: '@',
             correlation: '@'
           },
-          link: function link(scope) {
-            $log.log(scope);
-          }
+          replace: true,
+          link: function link(scope) {}
         };
       });
     }

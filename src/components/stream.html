@@ -1,5 +1,44 @@
-<h3 class="page-heading">
+<!----h3 class="page-heading">
 	Stream page!
-</h3>
+</h3-->
 
-<p>Custom page for app. Add anything you would like</p>
+
+<!--p>Custom page for app. Add anything you would like</p-->
+
+<div ng-if="!ctrl.pageReady" class="rt-loading-message-container">
+    <div class="rt-loading-message-inside">
+        <!-- img class="rt-loading-pulse" src="public/plugins/raintank-worldping-app/img/loading-pulse.svg" style="margin-bottom: 10px;"-->
+        <p class="rt-loading-msg-1">Ground Control to Major Tom</p>
+        <p class="rt-loading-msg-2">This is taking longer than expected.</p>
+        <p class="rt-loading-msg-3">We apologize, something may be up. Please contact us if this continues to happen.</p>
+    </div>
+</div>
+
+<section class="card-section" layout-mode>
+    <layout-selector></layout-selector>
+
+    <div ng-if="ctrl.probes.length === 0">
+        <em>No probes found</em>
+    </div>
+    <ol class="card-list">
+        <li class="card-item-wrapper" ng-repeat="probe in ctrl.probes">
+            <a class="card-item" ng-href="{{ctrl.isOrgAdmin ? 'plugins/raintank-worldping-app/page/probe-details?probe='+probe.id : ''}}">
+                <div class="card-item-header">
+                    <span></span>
+                </div>
+                <div class="card-item-body">
+                    <div class="card-item-details">
+                        <div class="card-item-name">
+                            {{probe.name}}
+
+                            <span ng-repeat="tag in probe.tags" tag-color-from-name="tag" class="label label-tag">
+                                
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </li>
+    </ol>
+</section>
+</div>

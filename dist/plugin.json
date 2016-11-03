@@ -35,7 +35,9 @@
   "includes": [
     {"type": "dashboard", "name": "Analytic Engine App Dashboard", "path": "dashboards/analytic-engine-home.json"},
     {"type": "panel", "name": "Analytic Engine App Panel"},
-    {"type": "datasource", "name": "Analytic Engine App Datasource"}
+    {"type": "datasource", "name": "Analytic Engine App Datasource"},
+    { "type": "page", "name": "Stream", "component": "StreamPageCtrl", "role": "Viewer", "addToNav": true},
+    { "type": "page", "name": "Logs", "component": "LogsPageCtrl", "role": "Viewer", "addToNav": false}
   ],
 
   "dependencies": {

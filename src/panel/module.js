@@ -8,13 +8,15 @@ class ExampleAppPanelCtrl extends PanelCtrl {
   constructor($scope, $injector, $http, backendSrv) {
     super($scope, $injector, $http, backendSrv);
 
+    this.backendSrv = backendSrv;
+
     $scope.metricResults = [
       { name: 'metric-1', value: 23 },
       { name: 'metric-2', value: 45 },
       { name: 'metric-3', value: 66 }
     ];
 
-    this.getConfig(function(config) {
+    this.getConfig(config => {
       console.log(config);
       $http({
         method: 'GET',
@@ -31,7 +33,7 @@ class ExampleAppPanelCtrl extends PanelCtrl {
     });
   }
   getConfig(cb) {
-    backendSrv.get('api/plugins/analytic-engine-app/settings').then(function(results) {
+    this.backendSrv.get('api/plugins/analytic-engine-app/settings').then(function(results) {
       cb(results);
     });
   }

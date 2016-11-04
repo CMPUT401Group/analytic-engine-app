@@ -66,6 +66,8 @@ System.register(['app/plugins/sdk', '../css/example-app.css!', '../directives/me
 
           var _this = _possibleConstructorReturn(this, (ExampleAppPanelCtrl.__proto__ || Object.getPrototypeOf(ExampleAppPanelCtrl)).call(this, $scope, $injector, $http, backendSrv));
 
+          _this.backendSrv = backendSrv;
+
           $scope.metricResults = [{ name: 'metric-1', value: 23 }, { name: 'metric-2', value: 45 }, { name: 'metric-3', value: 66 }];
 
           _this.getConfig(function (config) {
@@ -89,7 +91,7 @@ System.register(['app/plugins/sdk', '../css/example-app.css!', '../directives/me
         _createClass(ExampleAppPanelCtrl, [{
           key: 'getConfig',
           value: function getConfig(cb) {
-            backendSrv.get('api/plugins/analytic-engine-app/settings').then(function (results) {
+            this.backendSrv.get('api/plugins/analytic-engine-app/settings').then(function (results) {
               cb(results);
             });
           }

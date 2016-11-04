@@ -20,7 +20,7 @@ class StreamPageCtrl {
 
         var self = this;
 
-        return this.backendSrv.get('162.246.157.107:8888/pattern/threshold').then(function(resp) {
+        return this.backendSrv.get('https://162.246.157.107:666/pattern/threshold').then(function(resp) {
 
             if (resp.meta.code !== 200) {
 

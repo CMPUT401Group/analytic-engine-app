@@ -75,7 +75,7 @@ System.register(['app/plugins/sdk', '../css/example-app.css!', '../directives/me
             var url = config.jsonData.analyticEngineURL;
             $http({
               method: 'GET',
-              url: url + '/analytic-engine/pattern/threshold'
+              url: url + '/pattern/threshold'
             }).then(function successCallback(response) {
               // this callback will be called asynchronously
               // when the response is available

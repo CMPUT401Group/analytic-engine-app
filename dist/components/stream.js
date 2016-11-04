@@ -1,82 +1,82 @@
 'use strict';
 
 System.register(['lodash'], function (_export, _context) {
-            "use strict";
+    "use strict";
 
-            var _, _createClass, StreamPageCtrl;
+    var _, _createClass, StreamPageCtrl;
 
-            function _classCallCheck(instance, Constructor) {
-                        if (!(instance instanceof Constructor)) {
-                                    throw new TypeError("Cannot call a class as a function");
-                        }
-            }
+    function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+            throw new TypeError("Cannot call a class as a function");
+        }
+    }
 
-            return {
-                        setters: [function (_lodash) {
-                                    _ = _lodash.default;
-                        }],
-                        execute: function () {
-                                    _createClass = function () {
-                                                function defineProperties(target, props) {
-                                                            for (var i = 0; i < props.length; i++) {
-                                                                        var descriptor = props[i];
-                                                                        descriptor.enumerable = descriptor.enumerable || false;
-                                                                        descriptor.configurable = true;
-                                                                        if ("value" in descriptor) descriptor.writable = true;
-                                                                        Object.defineProperty(target, descriptor.key, descriptor);
-                                                            }
-                                                }
+    return {
+        setters: [function (_lodash) {
+            _ = _lodash.default;
+        }],
+        execute: function () {
+            _createClass = function () {
+                function defineProperties(target, props) {
+                    for (var i = 0; i < props.length; i++) {
+                        var descriptor = props[i];
+                        descriptor.enumerable = descriptor.enumerable || false;
+                        descriptor.configurable = true;
+                        if ("value" in descriptor) descriptor.writable = true;
+                        Object.defineProperty(target, descriptor.key, descriptor);
+                    }
+                }
 
-                                                return function (Constructor, protoProps, staticProps) {
-                                                            if (protoProps) defineProperties(Constructor.prototype, protoProps);
-                                                            if (staticProps) defineProperties(Constructor, staticProps);
-                                                            return Constructor;
-                                                };
-                                    }();
+                return function (Constructor, protoProps, staticProps) {
+                    if (protoProps) defineProperties(Constructor.prototype, protoProps);
+                    if (staticProps) defineProperties(Constructor, staticProps);
+                    return Constructor;
+                };
+            }();
 
-                                    _export('StreamPageCtrl', StreamPageCtrl = function () {
-                                                function StreamPageCtrl($scope, $injector, backendSrv) {
-                                                            _classCallCheck(this, StreamPageCtrl);
+            _export('StreamPageCtrl', StreamPageCtrl = function () {
+                function StreamPageCtrl($scope, $injector, backendSrv) {
+                    _classCallCheck(this, StreamPageCtrl);
 
-                                                            this.backendSrv = backendSrv;
-                                                            this.pageReady = true;
-                                                            this.from = Date();
-                                                            this.to = Date();
-                                                            this.isOrgAdmin = true;
-                                                            this.metricname = "";
-                                                            this.results = [];
-                                                            this.search();
-                                                }
+                    this.backendSrv = backendSrv;
+                    this.pageReady = true;
+                    this.from = Date();
+                    this.to = Date();
+                    this.isOrgAdmin = true;
+                    this.metricname = "";
+                    this.results = [];
+                    this.search();
+                }
 
-                                                _createClass(StreamPageCtrl, [{
-                                                            key: 'search',
-                                                            value: function search() {
+                _createClass(StreamPageCtrl, [{
+                    key: 'search',
+                    value: function search() {
 
-                                                                        var self = this;
+                        var self = this;
 
-                                                                        return this.backendSrv.get('162.246.157.107:8888/pattern/threshold').then(function (resp) {
+                        return this.backendSrv.get('162.246.157.107:8888/pattern/threshold').then(function (resp) {
 
-                                                                                    if (resp.meta.code !== 200) {
+                            if (resp.meta.code !== 200) {
 
-                                                                                                self.alertSrv.set("failed to get probes.", resp.meta.message, 'error', 10000);
+                                self.alertSrv.set("failed to get probes.", resp.meta.message, 'error', 10000);
 
-                                                                                                return self.$q.reject(resp.meta.message);
-                                                                                    }
+                                return self.$q.reject(resp.meta.message);
+                            }
 
-                                                                                    self.pageReady = true;
+                            self.pageReady = true;
 
-                                                                                    self.probes = resp.body;
-                                                                        });
-                                                            }
-                                                }]);
+                            self.probes = resp.body;
+                        });
+                    }
+                }]);
 
-                                                return StreamPageCtrl;
-                                    }());
+                return StreamPageCtrl;
+            }());
 
-                                    StreamPageCtrl.templateUrl = 'components/stream.html';
+            StreamPageCtrl.templateUrl = 'components/stream.html';
 
-                                    _export('StreamPageCtrl', StreamPageCtrl);
-                        }
-            };
+            _export('StreamPageCtrl', StreamPageCtrl);
+        }
+    };
 });
 //# sourceMappingURL=stream.js.map

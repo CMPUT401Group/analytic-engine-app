@@ -43,12 +43,25 @@ System.register(['app/plugins/sdk', '../css/example-app.css!', '../directives/me
       _export('PanelCtrl', ExampleAppPanelCtrl = function (_PanelCtrl) {
         _inherits(ExampleAppPanelCtrl, _PanelCtrl);
 
-        function ExampleAppPanelCtrl($scope, $injector) {
+        function ExampleAppPanelCtrl($scope, $injector, $http) {
           _classCallCheck(this, ExampleAppPanelCtrl);
 
-          var _this = _possibleConstructorReturn(this, (ExampleAppPanelCtrl.__proto__ || Object.getPrototypeOf(ExampleAppPanelCtrl)).call(this, $scope, $injector));
+          var _this = _possibleConstructorReturn(this, (ExampleAppPanelCtrl.__proto__ || Object.getPrototypeOf(ExampleAppPanelCtrl)).call(this, $scope, $injector, $http));
 
           $scope.metricResults = [{ name: 'metric-1', value: 23 }, { name: 'metric-2', value: 45 }, { name: 'metric-3', value: 66 }];
+
+          $http({
+            method: 'GET',
+            url: 'http://www.google.com'
+          }).then(function successCallback(response) {
+            // this callback will be called asynchronously
+            // when the response is available
+            console.log(response);
+          }, function errorCallback(response) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+            console.log(response);
+          });
           return _this;
         }
 

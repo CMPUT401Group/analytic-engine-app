@@ -66,11 +66,10 @@ System.register(['app/plugins/sdk'], function (_export, _context) {
 
                     var _this = _possibleConstructorReturn(this, (StreamPageCtrl.__proto__ || Object.getPrototypeOf(StreamPageCtrl)).call(this, $scope, $inejctor));
 
-                    _this.pageReady = true;
+                    _this.pageready = true;
                     _this.from = Date();
                     _this.to = Date();
                     _this.metricname = "";
-                    _this.results = [];
 
                     return _this;
                 }

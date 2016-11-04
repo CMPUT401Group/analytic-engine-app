@@ -71,7 +71,7 @@ System.register(['app/plugins/sdk', '../css/example-app.css!', '../directives/th
 
           console.log(_this.dashboard);
 
-          $scope.metricResults = [];
+          $scope.thresholds = [];
 
           _this.getConfig(function (config) {
             console.log(config);
@@ -82,8 +82,10 @@ System.register(['app/plugins/sdk', '../css/example-app.css!', '../directives/th
             }).then(function successCallback(response) {
               // this callback will be called asynchronously
               // when the response is available
-              console.log(response);
-              $scope.metricResults = response.data;
+              response.data = response.data.map(function (threshold) {
+                return threshold[0];
+              });
+              $scope.thresholds = response.data;
             }, function errorCallback(response) {
               // called asynchronously if an error occurs
               // or server returns response with an error status.
@@ -106,7 +108,7 @@ System.register(['app/plugins/sdk', '../css/example-app.css!', '../directives/th
         return ExampleAppPanelCtrl;
       }(PanelCtrl));
 
-      ExampleAppPanelCtrl.template = '<h2 class="analytic-engine-app-heading"></h2>' + '<threshold-patterns results="metricResults"></threshold-patterns>';
+      ExampleAppPanelCtrl.template = '<h2 class="analytic-engine-app-heading"></h2>' + '<threshold-patterns data-thresholds="thresholds"></threshold-patterns>';
 
       _export('PanelCtrl', ExampleAppPanelCtrl);
     }

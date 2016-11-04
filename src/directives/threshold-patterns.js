@@ -7,7 +7,7 @@ angular.module('grafana.directives').directive("thresholdPatterns", function($lo
   return {
     templateUrl: 'public/plugins/analytic-engine-app/directives/threshold-patterns.html',
     scope: {
-      results: '='
+      thresholds: '='
     },
     replace: true,
     link(scope) {

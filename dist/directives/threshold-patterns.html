@@ -11,9 +11,8 @@
     <div class="card-section card-list-layout-list">
         <ol class="card-list">
             <threshold-pattern-entry
-                    ng-repeat="result in results"
-                    data-metric-name="{{result.name}}"
-                    data-value="{{result.value}}"></threshold-pattern-entry>
+                    ng-repeat="threshold in thresholds"
+                    data-threshold="threshold"></threshold-pattern-entry>
         </ol>
     </div>
 </div>

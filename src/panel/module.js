@@ -13,7 +13,7 @@ class ExampleAppPanelCtrl extends PanelCtrl {
 
     console.log(this.dashboard);
 
-    $scope.metricResults = [];
+    $scope.thresholds = [];
 
     this.getConfig(config => {
       console.log(config);
@@ -24,8 +24,10 @@ class ExampleAppPanelCtrl extends PanelCtrl {
       }).then(function successCallback(response) {
         // this callback will be called asynchronously
         // when the response is available
-        console.log(response);
-        $scope.metricResults = response.data;
+        response.data = response.data.map(threshold => {
+          return threshold[0];
+        });
+        $scope.thresholds = response.data;
       }, function errorCallback(response) {
         // called asynchronously if an error occurs
         // or server returns response with an error status.
@@ -42,7 +44,7 @@ class ExampleAppPanelCtrl extends PanelCtrl {
   }
 }
 ExampleAppPanelCtrl.template = '<h2 class="analytic-engine-app-heading"></h2>' +
-  '<threshold-patterns results="metricResults"></threshold-patterns>';
+  '<threshold-patterns data-thresholds="thresholds"></threshold-patterns>';
 
 export {
   ExampleAppPanelCtrl as PanelCtrl

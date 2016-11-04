@@ -17,8 +17,7 @@ System.register(['lodash', 'angular'], function (_export, _context) {
         return {
           templateUrl: 'public/plugins/analytic-engine-app/directives/threshold-pattern-entry.html',
           scope: {
-            metricName: '@',
-            value: '@'
+            threshold: '='
           },
           replace: true,
           link: function link(scope) {}

@@ -5,8 +5,7 @@ angular.module('grafana.directives').directive("thresholdPatternEntry", function
   return {
     templateUrl: 'public/plugins/analytic-engine-app/directives/threshold-pattern-entry.html',
     scope: {
-      metricName: '@',
-      value: '@'
+      threshold: '='
     },
     replace: true,
     link(scope) {

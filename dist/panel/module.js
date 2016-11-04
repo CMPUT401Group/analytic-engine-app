@@ -82,10 +82,9 @@ System.register(['app/plugins/sdk', '../css/example-app.css!', '../directives/th
             }).then(function successCallback(response) {
               // this callback will be called asynchronously
               // when the response is available
-              response.data = response.data.map(function (threshold) {
-                return threshold[0];
+              $scope.thresholds = response.data.map(function (threshold) {
+                return threshold.pattern[0];
               });
-              $scope.thresholds = response.data;
             }, function errorCallback(response) {
               // called asynchronously if an error occurs
               // or server returns response with an error status.

@@ -14,7 +14,7 @@ System.register(['angular', './threshold-pattern-entry'], function (_export, _co
         return {
           templateUrl: 'public/plugins/analytic-engine-app/directives/threshold-results.html',
           scope: {
-            thresholds: '='
+            results: '='
           },
           replace: true,
           link: function link(scope) {

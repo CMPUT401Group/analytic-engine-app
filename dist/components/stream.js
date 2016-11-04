@@ -3,7 +3,7 @@
 System.register(['app/plugins/sdk'], function (_export, _context) {
     "use strict";
 
-    var PaneCtrl, _createClass, StreamPageCtrl;
+    var PanelCtrl, _createClass, StreamPageCtrl;
 
     function _classCallCheck(instance, Constructor) {
         if (!(instance instanceof Constructor)) {
@@ -37,7 +37,7 @@ System.register(['app/plugins/sdk'], function (_export, _context) {
 
     return {
         setters: [function (_appPluginsSdk) {
-            PaneCtrl = _appPluginsSdk.PaneCtrl;
+            PanelCtrl = _appPluginsSdk.PanelCtrl;
         }],
         execute: function () {
             _createClass = function () {

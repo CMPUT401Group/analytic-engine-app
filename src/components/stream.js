@@ -1,4 +1,4 @@
-import {PaneCtrl} from 'app/plugins/sdk';
+import {PanelCtrl} from 'app/plugins/sdk';
 
 
 

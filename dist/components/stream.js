@@ -40,8 +40,8 @@ System.register(['lodash'], function (_export, _context) {
 
                                                             this.backendSrv = backendSrv;
                                                             this.pageReady = true;
-                                                            this.from = Date();
-                                                            this.to = Date();
+                                                            this.from = new Date();
+                                                            this.to = new Date();
                                                             this.isOrgAdmin = true;
                                                             this.metricname = "";
                                                             this.results = [];

@@ -1,6 +1,6 @@
 import Utility from "../utility";
 
-let thresholdResultUrl = '/plugins/analytic-engine-app/page/threshold';
+let thresholdResultUrl = '/plugins/analytic-engine-app/page/thresholdresult';
 
 class ThresholdPageCtrl {
   constructor($scope, $injector, $http, $log, backendSrv) {

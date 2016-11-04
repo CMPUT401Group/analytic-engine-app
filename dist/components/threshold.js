@@ -34,7 +34,7 @@ System.register(['../utility'], function (_export, _context) {
         };
       }();
 
-      thresholdResultUrl = '/plugins/analytic-engine-app/page/threshold';
+      thresholdResultUrl = '/plugins/analytic-engine-app/page/thresholdresult';
 
       _export('ThresholdPageCtrl', ThresholdPageCtrl = function () {
         function ThresholdPageCtrl($scope, $injector, $http, $log, backendSrv) {

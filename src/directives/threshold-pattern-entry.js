@@ -8,7 +8,7 @@ angular.module('grafana.directives').directive("thresholdPatternEntry", function
     },
     replace: true,
     link(scope) {
-      $log.log(scope.url);
+      $log.log(scope.threshold.url);
     }
   }
 });

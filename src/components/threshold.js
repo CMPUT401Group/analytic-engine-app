@@ -26,7 +26,7 @@ class ThresholdPageCtrl {
         this.thresholds = response.data.map(threshold => {
           threshold = threshold.pattern[0];
           let params = Utility.objToURLParam(threshold);
-          threshold.url = `${thresholdResultUrl}?`;
+          threshold.url = `${thresholdResultUrl}?${params}`;
           return threshold;
         });
       }, response => {

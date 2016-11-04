@@ -66,7 +66,7 @@ System.register(['../utility'], function (_export, _context) {
                 _this.thresholds = response.data.map(function (threshold) {
                   threshold = threshold.pattern[0];
                   var params = Utility.objToURLParam(threshold);
-                  threshold.url = thresholdResultUrl + '?';
+                  threshold.url = thresholdResultUrl + '?' + params;
                   return threshold;
                 });
               }, function (response) {

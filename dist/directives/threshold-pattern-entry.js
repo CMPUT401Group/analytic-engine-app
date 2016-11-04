@@ -18,7 +18,7 @@ System.register(['angular'], function (_export, _context) {
           },
           replace: true,
           link: function link(scope) {
-            $log.log(scope.url);
+            $log.log(scope.threshold.url);
           }
         };
       });

@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import angular from 'angular';
 
 angular.module('grafana.directives').directive("thresholdPatternEntry", function($log) {
@@ -9,7 +8,7 @@ angular.module('grafana.directives').directive("thresholdPatternEntry", function
     },
     replace: true,
     link(scope) {
-
+      $log.log(scope.url);
     }
   }
 });

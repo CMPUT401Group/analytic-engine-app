@@ -34,8 +34,8 @@
 <section class="card-section" layout-mode>
     <layout-selector></layout-selector>
     <ol class="card-list">
-        <li class="card-item-wrapper" ng-repeat="probe in ctrl.probes">
-            <a class="card-item" ng-href="{{ctrl.isOrgAdmin ? 'plugins/raintank-worldping-app/page/probe-details?probe='+probe.id : ''}}">
+        <li class="card-item-wrapper" ng-repeat="probe in ctrl.results">
+            
                 <div class="card-item-header">
                     <span></span>
                 </div>
@@ -44,13 +44,12 @@
                         <div class="card-item-name">
                             {{probe.name}}
 
-                            <span ng-repeat="tag in probe.tags" tag-color-from-name="tag" class="label label-tag">
-                                
+                            <span>
+                               {{probe.value}} 
                             </span>
                         </div>
                     </div>
                 </div>
-            </a>
         </li>
     </ol>
 </section>

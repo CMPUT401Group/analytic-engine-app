@@ -1,18 +1,3 @@
-import angular from 'angular';
-
-import homePage from "threshold-pages/home.html";
-import resultPage from "threshold-pages/result.html";
-
-let thresholdApp = angular.module("thresholdApp", ["ngRoute"]);
-thresholdApp.config(function($routeProvider) {
-  $routeProvider
-    .when("/", {
-      template: homePage
-    }).when("/result", {
-    template: resultPage
-    });
-});
-
 class ThresholdPageCtrl {
   constructor($scope, $injector, $http, $log, backendSrv) {
     this.$scope = $scope;

@@ -1,9 +1,9 @@
-"use strict";
+'use strict';
 
-System.register(["angular", "threshold-pages/home.html", "threshold-pages/result.html"], function (_export, _context) {
+System.register([], function (_export, _context) {
   "use strict";
 
-  var angular, homePage, resultPage, _createClass, thresholdApp, ThresholdPageCtrl;
+  var _createClass, ThresholdPageCtrl;
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -12,13 +12,7 @@ System.register(["angular", "threshold-pages/home.html", "threshold-pages/result
   }
 
   return {
-    setters: [function (_angular) {
-      angular = _angular.default;
-    }, function (_thresholdPagesHomeHtml) {
-      homePage = _thresholdPagesHomeHtml.default;
-    }, function (_thresholdPagesResultHtml) {
-      resultPage = _thresholdPagesResultHtml.default;
-    }],
+    setters: [],
     execute: function () {
       _createClass = function () {
         function defineProperties(target, props) {
@@ -38,17 +32,7 @@ System.register(["angular", "threshold-pages/home.html", "threshold-pages/result
         };
       }();
 
-      thresholdApp = angular.module("thresholdApp", ["ngRoute"]);
-
-      thresholdApp.config(function ($routeProvider) {
-        $routeProvider.when("/", {
-          template: homePage
-        }).when("/result", {
-          template: resultPage
-        });
-      });
-
-      _export("ThresholdPageCtrl", ThresholdPageCtrl = function () {
+      _export('ThresholdPageCtrl', ThresholdPageCtrl = function () {
         function ThresholdPageCtrl($scope, $injector, $http, $log, backendSrv) {
           _classCallCheck(this, ThresholdPageCtrl);
 
@@ -63,7 +47,7 @@ System.register(["angular", "threshold-pages/home.html", "threshold-pages/result
         }
 
         _createClass(ThresholdPageCtrl, [{
-          key: "updateThreshold",
+          key: 'updateThreshold',
           value: function updateThreshold() {
             var _this = this;
 
@@ -71,7 +55,7 @@ System.register(["angular", "threshold-pages/home.html", "threshold-pages/result
               var url = config.jsonData.analyticEngineURL;
               _this.$http({
                 method: 'GET',
-                url: url + "/pattern/threshold"
+                url: url + '/pattern/threshold'
               }).then(function (response) {
                 // TODO: for now we only handle threshold with one pattern inside. Note,
                 //       a single threshold pattern can hold many threshold inside. Refactor?
@@ -85,7 +69,7 @@ System.register(["angular", "threshold-pages/home.html", "threshold-pages/result
             });
           }
         }, {
-          key: "getConfig",
+          key: 'getConfig',
           value: function getConfig(cb) {
             this.backendSrv.get('api/plugins/analytic-engine-app/settings').then(function (config) {
               cb(config);
@@ -98,7 +82,7 @@ System.register(["angular", "threshold-pages/home.html", "threshold-pages/result
 
       ThresholdPageCtrl.templateUrl = 'components/threshold.html';
 
-      _export("ThresholdPageCtrl", ThresholdPageCtrl);
+      _export('ThresholdPageCtrl', ThresholdPageCtrl);
     }
   };
 });

@@ -64,7 +64,7 @@ System.register(['app/plugins/sdk'], function (_export, _context) {
                                                 function StreamPageCtrl($scope, $injector, backendSrv) {
                                                             _classCallCheck(this, StreamPageCtrl);
 
-                                                            var _this = _possibleConstructorReturn(this, (StreamPageCtrl.__proto__ || Object.getPrototypeOf(StreamPageCtrl)).call(this, $scope, $inejector));
+                                                            var _this = _possibleConstructorReturn(this, (StreamPageCtrl.__proto__ || Object.getPrototypeOf(StreamPageCtrl)).call(this, $scope, $injector));
 
                                                             _this.pageReady = true;
                                                             _this.from = Date();

@@ -5,7 +5,7 @@ import {PanelCtrl} from 'app/plugins/sdk';
 export class StreamPageCtrl extends PanelCtrl{
    
     constructor($scope,$injector,backendSrv){
-        super($scope,$inejector);
+        super($scope,$injector);
         this.pageReady = true;
         this.from = Date();
         this.to = Date();

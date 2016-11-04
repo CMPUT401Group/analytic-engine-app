@@ -37,7 +37,8 @@
     {"type": "panel", "name": "Analytic Engine App Panel"},
     {"type": "datasource", "name": "Analytic Engine App Datasource"},
     { "type": "page", "name": "Stream", "component": "StreamPageCtrl", "role": "Viewer", "addToNav": true},
-    { "type": "page", "name": "Logs", "component": "LogsPageCtrl", "role": "Viewer", "addToNav": true}
+    { "type": "page", "name": "Logs", "component": "LogsPageCtrl", "role": "Viewer", "addToNav": true},
+    { "type": "page", "name": "Threshold", "component": "ThresholdPageCtrl", "role": "Viewer", "addToNav": true}
   ],
 
   "dependencies": {

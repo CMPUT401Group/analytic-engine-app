@@ -45,7 +45,7 @@ System.register(['lodash'], function (_export, _context) {
                                                             this.isOrgAdmin = true;
                                                             this.metricname = "";
                                                             this.results = [];
-                                                            search();
+                                                            this.search();
                                                 }
 
                                                 _createClass(StreamPageCtrl, [{

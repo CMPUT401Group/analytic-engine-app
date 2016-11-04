@@ -12,7 +12,7 @@ export class StreamPageCtrl {
         this.isOrgAdmin = true;
         this.metricname="";
         this.results = [];
-        search();
+        this.search();
     
     }
 

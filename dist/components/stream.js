@@ -54,7 +54,7 @@ System.register(['lodash'], function (_export, _context) {
 
                                                                         var self = this;
 
-                                                                        return this.backendSrv.get('162.246.157.107:666/analytic-engine').then(function (resp) {
+                                                                        return this.backendSrv.get('/analytic-engine').then(function (resp) {
 
                                                                                     if (resp.meta.code !== 200) {
 

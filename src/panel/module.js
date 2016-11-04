@@ -9,6 +9,9 @@ class ExampleAppPanelCtrl extends PanelCtrl {
     super($scope, $injector, $http, backendSrv);
 
     this.backendSrv = backendSrv;
+    this.panel = $scope.ctrl.panel;
+
+    console.log(this.panel);
 
     $scope.metricResults = [];
 

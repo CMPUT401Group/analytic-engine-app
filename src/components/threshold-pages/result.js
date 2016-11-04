@@ -4,6 +4,14 @@ class ThresholdResultPageCtrl {
     this.$http = $http;
     this.$log = $log;
     this.backendSrv = backendSrv;
+
+    this.results = [
+      "match1",
+      "match2",
+      "match3",
+      "match4",
+      "match5"
+    ];
   }
 }
 

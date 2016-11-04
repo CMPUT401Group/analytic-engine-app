@@ -22,14 +22,6 @@ class StreamPageCtrl {
 
         return this.backendSrv.get('analytic-engine/pattern/threshold').then(function(resp) {
 
-            if (resp.meta.code !== 200) {
-
-                self.alertSrv.set("failed to get probes.", resp.meta.message, 'error', 10000);
-
-                return self.$q.reject(resp.meta.message);
-
-            }
-
             self.pageReady = true;
 
             self.probes = resp.body;

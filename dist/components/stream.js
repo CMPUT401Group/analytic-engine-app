@@ -73,9 +73,9 @@ System.register(['lodash'], function (_export, _context) {
                                                 return StreamPageCtrl;
                                     }());
 
-                                    _export('StreamPageCtrl', StreamPageCtrl);
-
                                     StreamPageCtrl.templateUrl = 'components/stream.html';
+
+                                    _export('StreamPageCtrl', StreamPageCtrl);
                         }
             };
 });

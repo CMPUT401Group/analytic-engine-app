@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 
-export class StreamPageCtrl {
+class StreamPageCtrl {
    
     constructor($scope,$injector,backendSrv)
     {
@@ -16,8 +16,7 @@ export class StreamPageCtrl {
     
     }
 
-    search()
-    {
+    search(){
 
         var self = this;
 
@@ -41,5 +40,6 @@ export class StreamPageCtrl {
 }
 
 StreamPageCtrl.templateUrl = 'components/stream.html';
+export{StreamPageCtrl};
 
 

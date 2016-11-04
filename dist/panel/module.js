@@ -67,9 +67,9 @@ System.register(['app/plugins/sdk', '../css/example-app.css!', '../directives/th
           var _this = _possibleConstructorReturn(this, (ExampleAppPanelCtrl.__proto__ || Object.getPrototypeOf(ExampleAppPanelCtrl)).call(this, $scope, $injector, $http, backendSrv));
 
           _this.backendSrv = backendSrv;
-          _this.panel = $scope.ctrl.panel;
+          _this.dashboard = $scope.ctrl.dashboard;
 
-          console.log(_this.panel);
+          console.log(_this.dashboard);
 
           $scope.metricResults = [];
 

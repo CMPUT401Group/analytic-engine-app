@@ -5,23 +5,21 @@ class ThresholdPageCtrl {
     this.$log = $log;
     this.backendSrv = backendSrv;
 
-    this.threshold = [];
+    this.thresholds = [];
 
     this.updateThreshold();
   }
 
   updateThreshold() {
     this.getConfig(config => {
-      this.$log.log(config);
       let url = config.jsonData.analyticEngineURL;
       this.$http({
         method: 'GET',
         url: `${url}/pattern/threshold`
       }).then(response => {
-        this.$log.log(response);
         // TODO: for now we only handle threshold with one pattern inside. Note,
         //       a single threshold pattern can hold many threshold inside. Refactor?
-        this.$scope.thresholds = response.data.map(threshold => {
+        this.thresholds = response.data.map(threshold => {
           return threshold.pattern[0];
         });
       }, response => {

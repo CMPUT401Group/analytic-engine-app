@@ -41,7 +41,7 @@ System.register([], function (_export, _context) {
           this.$log = $log;
           this.backendSrv = backendSrv;
 
-          this.threshold = [];
+          this.thresholds = [];
 
           this.updateThreshold();
         }
@@ -52,16 +52,14 @@ System.register([], function (_export, _context) {
             var _this = this;
 
             this.getConfig(function (config) {
-              _this.$log.log(config);
               var url = config.jsonData.analyticEngineURL;
               _this.$http({
                 method: 'GET',
                 url: url + '/pattern/threshold'
               }).then(function (response) {
-                _this.$log.log(response);
                 // TODO: for now we only handle threshold with one pattern inside. Note,
                 //       a single threshold pattern can hold many threshold inside. Refactor?
-                _this.$scope.thresholds = response.data.map(function (threshold) {
+                _this.thresholds = response.data.map(function (threshold) {
                   return threshold.pattern[0];
                 });
               }, function (response) {

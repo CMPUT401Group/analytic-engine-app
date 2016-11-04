@@ -24,7 +24,7 @@ class StreamPageCtrl {
 
             self.pageReady = true;
 
-            self.probes = resp.body;
+            self.results = resp.body;
 
         });
 

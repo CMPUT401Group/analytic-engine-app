@@ -58,7 +58,7 @@ System.register(['lodash'], function (_export, _context) {
 
                             self.pageReady = true;
 
-                            self.probes = resp.body;
+                            self.results = resp.body;
                         });
                     }
                 }]);

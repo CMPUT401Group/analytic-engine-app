@@ -82,6 +82,9 @@ System.register(['app/plugins/sdk', '../css/example-app.css!', '../directives/th
             }).then(function successCallback(response) {
               // this callback will be called asynchronously
               // when the response is available
+
+              // TODO: for now we only handle threshold with one pattern inside. Note,
+              //       a single threshold pattern can hold many threshold inside. Refactor?
               $scope.thresholds = response.data.map(function (threshold) {
                 return threshold.pattern[0];
               });

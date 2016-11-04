@@ -24,6 +24,9 @@ class ExampleAppPanelCtrl extends PanelCtrl {
       }).then(function successCallback(response) {
         // this callback will be called asynchronously
         // when the response is available
+
+        // TODO: for now we only handle threshold with one pattern inside. Note,
+        //       a single threshold pattern can hold many threshold inside. Refactor?
         $scope.thresholds = response.data.map(threshold => {
           return threshold.pattern[0];
         });

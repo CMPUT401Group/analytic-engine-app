@@ -2,7 +2,12 @@
     <div class="card-item pointer">
         <div class="card-item-header card-item-header--wp-icons card-item-header-action">
             <span style="margin-left: 15px; vertical-align: sub;" href="#">
-                {{threshold.thresholdRule}} {{threshold.value}}
+                <span ng-show="threshold.thresholdRule=='LESSTHAN'">&lt;</span>
+                <span ng-show="threshold.thresholdRule=='LESSTHANEQUAL'">&lt;=</span>
+                <span ng-show="threshold.thresholdRule=='EQUAL'">=</span>
+                <span ng-show="threshold.thresholdRule=='GREATERTHANEQUAL'">&gt;=</span>
+                <span ng-show="threshold.thresholdRule=='GREATERTHAN'">&gt;</span>
+                {{threshold.value}}
             </span>
         </div>
 

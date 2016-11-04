@@ -13,9 +13,9 @@ System.register(['lodash', 'angular'], function (_export, _context) {
     }],
     execute: function () {
 
-      angular.module('grafana.directives').directive("metricEntry", function ($log) {
+      angular.module('grafana.directives').directive("thresholdPatternEntry", function ($log) {
         return {
-          templateUrl: 'public/plugins/analytic-engine-app/directives/metric-entry.html',
+          templateUrl: 'public/plugins/analytic-engine-app/directives/threshold-pattern-entry.html',
           scope: {
             metricName: '@',
             value: '@'
@@ -27,4 +27,4 @@ System.register(['lodash', 'angular'], function (_export, _context) {
     }
   };
 });
-//# sourceMappingURL=metric-entry.js.map
+//# sourceMappingURL=threshold-pattern-entry.js.map

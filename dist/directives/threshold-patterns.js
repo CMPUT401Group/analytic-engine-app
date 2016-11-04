@@ -1,6 +1,6 @@
 'use strict';
 
-System.register(['lodash', 'angular', './metric-entry'], function (_export, _context) {
+System.register(['lodash', 'angular', './threshold-pattern-entry'], function (_export, _context) {
   "use strict";
 
   var _, angular;
@@ -10,12 +10,12 @@ System.register(['lodash', 'angular', './metric-entry'], function (_export, _con
       _ = _lodash.default;
     }, function (_angular) {
       angular = _angular.default;
-    }, function (_metricEntry) {}],
+    }, function (_thresholdPatternEntry) {}],
     execute: function () {
 
-      angular.module('grafana.directives').directive("metricResults", function ($log) {
+      angular.module('grafana.directives').directive("thresholdPatterns", function ($log) {
         return {
-          templateUrl: 'public/plugins/analytic-engine-app/directives/metric-results.html',
+          templateUrl: 'public/plugins/analytic-engine-app/directives/threshold-patterns.html',
           scope: {
             results: '='
           },
@@ -28,4 +28,4 @@ System.register(['lodash', 'angular', './metric-entry'], function (_export, _con
     }
   };
 });
-//# sourceMappingURL=metric-results.js.map
+//# sourceMappingURL=threshold-patterns.js.map

@@ -1,7 +1,7 @@
 import {PanelCtrl} from  'app/plugins/sdk';
 
 import '../css/example-app.css!'
-import '../directives/metric-results';
+import '../directives/threshold-patterns';
 
 class ExampleAppPanelCtrl extends PanelCtrl {
 
@@ -25,18 +25,20 @@ class ExampleAppPanelCtrl extends PanelCtrl {
       }, function errorCallback(response) {
         // called asynchronously if an error occurs
         // or server returns response with an error status.
+        // todo: Use grafana toast thing to report error.
         console.log(response);
       });
     });
   }
+
   getConfig(cb) {
-    this.backendSrv.get('api/plugins/analytic-engine-app/settings').then(function(results) {
-      cb(results);
+    this.backendSrv.get('api/plugins/analytic-engine-app/settings').then(function(config) {
+      cb(config);
     });
   }
 }
 ExampleAppPanelCtrl.template = '<h2 class="analytic-engine-app-heading"></h2>' +
-  '<metric-results results="metricResults"></metric-results>';
+  '<threshold-patterns results="metricResults"></threshold-patterns>';
 
 export {
   ExampleAppPanelCtrl as PanelCtrl

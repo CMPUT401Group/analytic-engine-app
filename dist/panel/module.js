@@ -1,6 +1,6 @@
 'use strict';
 
-System.register(['app/plugins/sdk', '../css/example-app.css!', '../directives/metric-results'], function (_export, _context) {
+System.register(['app/plugins/sdk', '../css/example-app.css!', '../directives/threshold-patterns'], function (_export, _context) {
   "use strict";
 
   var PanelCtrl, _createClass, ExampleAppPanelCtrl;
@@ -38,7 +38,7 @@ System.register(['app/plugins/sdk', '../css/example-app.css!', '../directives/me
   return {
     setters: [function (_appPluginsSdk) {
       PanelCtrl = _appPluginsSdk.PanelCtrl;
-    }, function (_cssExampleAppCss) {}, function (_directivesMetricResults) {}],
+    }, function (_cssExampleAppCss) {}, function (_directivesThresholdPatterns) {}],
     execute: function () {
       _createClass = function () {
         function defineProperties(target, props) {
@@ -83,6 +83,7 @@ System.register(['app/plugins/sdk', '../css/example-app.css!', '../directives/me
             }, function errorCallback(response) {
               // called asynchronously if an error occurs
               // or server returns response with an error status.
+              // todo: Use grafana toast thing to report error.
               console.log(response);
             });
           });
@@ -92,8 +93,8 @@ System.register(['app/plugins/sdk', '../css/example-app.css!', '../directives/me
         _createClass(ExampleAppPanelCtrl, [{
           key: 'getConfig',
           value: function getConfig(cb) {
-            this.backendSrv.get('api/plugins/analytic-engine-app/settings').then(function (results) {
-              cb(results);
+            this.backendSrv.get('api/plugins/analytic-engine-app/settings').then(function (config) {
+              cb(config);
             });
           }
         }]);
@@ -101,7 +102,7 @@ System.register(['app/plugins/sdk', '../css/example-app.css!', '../directives/me
         return ExampleAppPanelCtrl;
       }(PanelCtrl));
 
-      ExampleAppPanelCtrl.template = '<h2 class="analytic-engine-app-heading"></h2>' + '<metric-results results="metricResults"></metric-results>';
+      ExampleAppPanelCtrl.template = '<h2 class="analytic-engine-app-heading"></h2>' + '<threshold-patterns results="metricResults"></threshold-patterns>';
 
       _export('PanelCtrl', ExampleAppPanelCtrl);
     }

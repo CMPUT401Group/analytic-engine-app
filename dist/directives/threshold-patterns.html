@@ -1,0 +1,16 @@
+<div class="page-header">
+    <h1 class="rt-h1">Threshold Patterns</h1>
+    <a class="btn btn-success" href="plugins/raintank-worldping-app/page/endpoint-config" ng-show="ctrl.isOrgEditor">
+        <i class="fa fa-plus"></i>
+        New Endpoint
+    </a>
+</div>
+
+<div class="card-section card-list-layout-list">
+    <ol class="card-list">
+        <threshold-pattern-entry
+                ng-repeat="result in results"
+                data-metric-name="{{result.name}}"
+                data-value="{{result.value}}"></threshold-pattern-entry>
+    </ol>
+</div>

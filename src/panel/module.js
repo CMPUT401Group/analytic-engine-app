@@ -10,11 +10,7 @@ class ExampleAppPanelCtrl extends PanelCtrl {
 
     this.backendSrv = backendSrv;
 
-    $scope.metricResults = [
-      { name: 'metric-1', value: 23 },
-      { name: 'metric-2', value: 45 },
-      { name: 'metric-3', value: 66 }
-    ];
+    $scope.metricResults = [];
 
     this.getConfig(config => {
       console.log(config);
@@ -25,7 +21,7 @@ class ExampleAppPanelCtrl extends PanelCtrl {
       }).then(function successCallback(response) {
         // this callback will be called asynchronously
         // when the response is available
-        console.log(response);
+        $scope.metricResults = response.data;
       }, function errorCallback(response) {
         // called asynchronously if an error occurs
         // or server returns response with an error status.

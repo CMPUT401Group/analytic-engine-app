@@ -1,8 +1,8 @@
 <div class="card-section card-list-layout-list">
     <ol class="card-list">
         <metric-entry
-                ng-repeat="(name, value) in results"
-                data-metric-name="{{name}}"
-                data-value="{{value}}"></metric-entry>
+                ng-repeat="result in results"
+                data-metric-name="{{result.name}}"
+                data-value="{{result.value}}"></metric-entry>
     </ol>
 </div>

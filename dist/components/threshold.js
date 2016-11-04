@@ -1,9 +1,9 @@
 'use strict';
 
-System.register([], function (_export, _context) {
+System.register(['../utility'], function (_export, _context) {
   "use strict";
 
-  var _createClass, ThresholdPageCtrl;
+  var Utility, _createClass, thresholdResultUrl, ThresholdPageCtrl;
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -12,7 +12,9 @@ System.register([], function (_export, _context) {
   }
 
   return {
-    setters: [],
+    setters: [function (_utility) {
+      Utility = _utility.default;
+    }],
     execute: function () {
       _createClass = function () {
         function defineProperties(target, props) {
@@ -31,6 +33,8 @@ System.register([], function (_export, _context) {
           return Constructor;
         };
       }();
+
+      thresholdResultUrl = '/plugins/analytic-engine-app/page/thresholdresult';
 
       _export('ThresholdPageCtrl', ThresholdPageCtrl = function () {
         function ThresholdPageCtrl($scope, $injector, $http, $log, backendSrv) {
@@ -60,7 +64,10 @@ System.register([], function (_export, _context) {
                 // TODO: for now we only handle threshold with one pattern inside. Note,
                 //       a single threshold pattern can hold many threshold inside. Refactor?
                 _this.thresholds = response.data.map(function (threshold) {
-                  return threshold.pattern[0];
+                  threshold = threshold.pattern[0];
+                  var params = Utility.objToURLParam(threshold);
+                  threshold.url = thresholdResultUrl + '?' + params;
+                  return threshold;
                 });
               }, function (response) {
                 // todo: Use grafana toast thing to report error.

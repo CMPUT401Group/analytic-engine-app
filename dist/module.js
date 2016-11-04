@@ -1,6 +1,6 @@
 'use strict';
 
-System.register(['./components/logs', './components/stream', './components/threshold', './components/threshold-pages/result', './components/config', './directives/threshold-pattern-entry', './directives/threshold-patterns'], function (_export, _context) {
+System.register(['./components/logs', './components/stream', './components/threshold', './components/threshold-pages/result', './components/config', './directives/threshold-pattern-entry', './directives/threshold-patterns', './directives/threshold-results'], function (_export, _context) {
   "use strict";
 
   var LogsPageCtrl, StreamPageCtrl, ThresholdPageCtrl, ThresholdResultPageCtrl, AnalyticEngineAppConfigCtrl;
@@ -15,7 +15,7 @@ System.register(['./components/logs', './components/stream', './components/thres
       ThresholdResultPageCtrl = _componentsThresholdPagesResult.ThresholdResultPageCtrl;
     }, function (_componentsConfig) {
       AnalyticEngineAppConfigCtrl = _componentsConfig.AnalyticEngineAppConfigCtrl;
-    }, function (_directivesThresholdPatternEntry) {}, function (_directivesThresholdPatterns) {}],
+    }, function (_directivesThresholdPatternEntry) {}, function (_directivesThresholdPatterns) {}, function (_directivesThresholdResults) {}],
     execute: function () {
       _export('ConfigCtrl', AnalyticEngineAppConfigCtrl);
 

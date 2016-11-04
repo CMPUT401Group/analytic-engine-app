@@ -1,14 +1,11 @@
 'use strict';
 
-System.register(['lodash', 'angular'], function (_export, _context) {
+System.register(['angular'], function (_export, _context) {
   "use strict";
 
-  var _, angular;
-
+  var angular;
   return {
-    setters: [function (_lodash) {
-      _ = _lodash.default;
-    }, function (_angular) {
+    setters: [function (_angular) {
       angular = _angular.default;
     }],
     execute: function () {
@@ -20,7 +17,9 @@ System.register(['lodash', 'angular'], function (_export, _context) {
             threshold: '='
           },
           replace: true,
-          link: function link(scope) {}
+          link: function link(scope) {
+            $log.log(scope.threshold.url);
+          }
         };
       });
     }

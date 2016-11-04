@@ -6,6 +6,7 @@ import {AnalyticEngineAppConfigCtrl} from './components/config';
 
 import './directives/threshold-pattern-entry';
 import './directives/threshold-patterns';
+import './directives/threshold-results';
 
 export {
   AnalyticEngineAppConfigCtrl as ConfigCtrl,

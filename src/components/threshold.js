@@ -1,3 +1,7 @@
+import Utility from "../utility";
+
+let thresholdResultUrl = '/plugins/analytic-engine-app/page/thresholdresult';
+
 class ThresholdPageCtrl {
   constructor($scope, $injector, $http, $log, backendSrv) {
     this.$scope = $scope;
@@ -20,7 +24,10 @@ class ThresholdPageCtrl {
         // TODO: for now we only handle threshold with one pattern inside. Note,
         //       a single threshold pattern can hold many threshold inside. Refactor?
         this.thresholds = response.data.map(threshold => {
-          return threshold.pattern[0];
+          threshold = threshold.pattern[0];
+          let params = Utility.objToURLParam(threshold);
+          threshold.url = `${thresholdResultUrl}?${params}`;
+          return threshold;
         });
       }, response => {
         // todo: Use grafana toast thing to report error.

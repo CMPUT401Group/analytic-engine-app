@@ -18,9 +18,10 @@ class ExampleAppPanelCtrl extends PanelCtrl {
 
     this.getConfig(config => {
       console.log(config);
+      let url = config.jsonData.analyticEngineURL;
       $http({
         method: 'GET',
-        url: 'http://www.google.com'
+        url: `${url}/pattern/threshold`
       }).then(function successCallback(response) {
         // this callback will be called asynchronously
         // when the response is available

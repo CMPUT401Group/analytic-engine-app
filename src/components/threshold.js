@@ -12,7 +12,7 @@ class ThresholdPageCtrl {
     this.from = new Date();
     this.to = new Date();
     this.thresholds = [];
-    updateThreshold();
+    this.updateThreshold();
 
   }
 

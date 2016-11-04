@@ -3,7 +3,7 @@
 System.register(['app/plugins/sdk', '../css/example-app.css!', '../directives/metric-results'], function (_export, _context) {
   "use strict";
 
-  var PanelCtrl, ExampleAppPanelCtrl;
+  var PanelCtrl, _createClass, ExampleAppPanelCtrl;
 
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
@@ -40,30 +40,60 @@ System.register(['app/plugins/sdk', '../css/example-app.css!', '../directives/me
       PanelCtrl = _appPluginsSdk.PanelCtrl;
     }, function (_cssExampleAppCss) {}, function (_directivesMetricResults) {}],
     execute: function () {
+      _createClass = function () {
+        function defineProperties(target, props) {
+          for (var i = 0; i < props.length; i++) {
+            var descriptor = props[i];
+            descriptor.enumerable = descriptor.enumerable || false;
+            descriptor.configurable = true;
+            if ("value" in descriptor) descriptor.writable = true;
+            Object.defineProperty(target, descriptor.key, descriptor);
+          }
+        }
+
+        return function (Constructor, protoProps, staticProps) {
+          if (protoProps) defineProperties(Constructor.prototype, protoProps);
+          if (staticProps) defineProperties(Constructor, staticProps);
+          return Constructor;
+        };
+      }();
+
       _export('PanelCtrl', ExampleAppPanelCtrl = function (_PanelCtrl) {
         _inherits(ExampleAppPanelCtrl, _PanelCtrl);
 
-        function ExampleAppPanelCtrl($scope, $injector, $http) {
+        function ExampleAppPanelCtrl($scope, $injector, $http, backendSrv) {
           _classCallCheck(this, ExampleAppPanelCtrl);
 
-          var _this = _possibleConstructorReturn(this, (ExampleAppPanelCtrl.__proto__ || Object.getPrototypeOf(ExampleAppPanelCtrl)).call(this, $scope, $injector, $http));
+          var _this = _possibleConstructorReturn(this, (ExampleAppPanelCtrl.__proto__ || Object.getPrototypeOf(ExampleAppPanelCtrl)).call(this, $scope, $injector, $http, backendSrv));
 
           $scope.metricResults = [{ name: 'metric-1', value: 23 }, { name: 'metric-2', value: 45 }, { name: 'metric-3', value: 66 }];
 
-          $http({
-            method: 'GET',
-            url: 'http://www.google.com'
-          }).then(function successCallback(response) {
-            // this callback will be called asynchronously
-            // when the response is available
-            console.log(response);
-          }, function errorCallback(response) {
-            // called asynchronously if an error occurs
-            // or server returns response with an error status.
-            console.log(response);
+          _this.getConfig(function (config) {
+            console.log(config);
+            $http({
+              method: 'GET',
+              url: 'http://www.google.com'
+            }).then(function successCallback(response) {
+              // this callback will be called asynchronously
+              // when the response is available
+              console.log(response);
+            }, function errorCallback(response) {
+              // called asynchronously if an error occurs
+              // or server returns response with an error status.
+              console.log(response);
+            });
           });
           return _this;
         }
+
+        _createClass(ExampleAppPanelCtrl, [{
+          key: 'getConfig',
+          value: function getConfig(cb) {
+            backendSrv.get('api/plugins/analytic-engine-app/settings').then(function (results) {
+              cb(results);
+            });
+          }
+        }]);
 
         return ExampleAppPanelCtrl;
       }(PanelCtrl));

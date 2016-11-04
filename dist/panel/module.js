@@ -72,9 +72,10 @@ System.register(['app/plugins/sdk', '../css/example-app.css!', '../directives/me
 
           _this.getConfig(function (config) {
             console.log(config);
+            var url = config.jsonData.analyticEngineURL;
             $http({
               method: 'GET',
-              url: 'http://www.google.com'
+              url: url + '/pattern/threshold'
             }).then(function successCallback(response) {
               // this callback will be called asynchronously
               // when the response is available

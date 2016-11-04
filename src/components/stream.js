@@ -1,11 +1,13 @@
 import {PanelCtrl} from 'app/plugins/sdk';
-
+import _ from 'lodash';
 
 
 export class StreamPageCtrl extends PanelCtrl{
    
-    constructor($scope,$injector,backendSrv){
-        super($scope,$injector);
+    constructor($scope,$injector,backendSrv)
+    {
+        super($scope,$injector,backendSrv);
+        this.backendSrv = backendSrv;
         this.pageReady = true;
         this.from = Date();
         this.to = Date();

@@ -1,9 +1,9 @@
 'use strict';
 
-System.register(['app/plugins/sdk'], function (_export, _context) {
+System.register(['app/plugins/sdk', 'lodash'], function (_export, _context) {
             "use strict";
 
-            var PanelCtrl, _createClass, StreamPageCtrl;
+            var PanelCtrl, _, _createClass, StreamPageCtrl;
 
             function _classCallCheck(instance, Constructor) {
                         if (!(instance instanceof Constructor)) {
@@ -38,6 +38,8 @@ System.register(['app/plugins/sdk'], function (_export, _context) {
             return {
                         setters: [function (_appPluginsSdk) {
                                     PanelCtrl = _appPluginsSdk.PanelCtrl;
+                        }, function (_lodash) {
+                                    _ = _lodash.default;
                         }],
                         execute: function () {
                                     _createClass = function () {
@@ -64,8 +66,9 @@ System.register(['app/plugins/sdk'], function (_export, _context) {
                                                 function StreamPageCtrl($scope, $injector, backendSrv) {
                                                             _classCallCheck(this, StreamPageCtrl);
 
-                                                            var _this = _possibleConstructorReturn(this, (StreamPageCtrl.__proto__ || Object.getPrototypeOf(StreamPageCtrl)).call(this, $scope, $injector));
+                                                            var _this = _possibleConstructorReturn(this, (StreamPageCtrl.__proto__ || Object.getPrototypeOf(StreamPageCtrl)).call(this, $scope, $injector, backendSrv));
 
+                                                            _this.backendSrv = backendSrv;
                                                             _this.pageReady = true;
                                                             _this.from = Date();
                                                             _this.to = Date();

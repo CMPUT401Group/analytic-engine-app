@@ -46,13 +46,16 @@ System.register(['app/plugins/sdk', '../css/example-app.css!', '../directives/me
         function ExampleAppPanelCtrl($scope, $injector) {
           _classCallCheck(this, ExampleAppPanelCtrl);
 
-          return _possibleConstructorReturn(this, (ExampleAppPanelCtrl.__proto__ || Object.getPrototypeOf(ExampleAppPanelCtrl)).call(this, $scope, $injector));
+          var _this = _possibleConstructorReturn(this, (ExampleAppPanelCtrl.__proto__ || Object.getPrototypeOf(ExampleAppPanelCtrl)).call(this, $scope, $injector));
+
+          $scope.metricResults = [{ name: 'metric-1', value: 23 }, { name: 'metric-2', value: 45 }, { name: 'metric-3', value: 66 }];
+          return _this;
         }
 
         return ExampleAppPanelCtrl;
       }(PanelCtrl));
 
-      ExampleAppPanelCtrl.template = '<h2 class="analytic-engine-app-heading"></h2>' + '<metric-results></metric-results>';
+      ExampleAppPanelCtrl.template = '<h2 class="analytic-engine-app-heading"></h2>' + '<metric-results results="metricResults"></metric-results>';
 
       _export('PanelCtrl', ExampleAppPanelCtrl);
     }

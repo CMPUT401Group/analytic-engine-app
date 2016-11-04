@@ -17,11 +17,11 @@ System.register(['lodash', 'angular', './metric-entry'], function (_export, _con
         return {
           templateUrl: 'public/plugins/analytic-engine-app/directives/metric-results.html',
           scope: {
-            //metricResults: '='
+            results: '='
           },
           replace: true,
           link: function link(scope) {
-            scope.results = [{ name: 'metric-1', value: 23 }, { name: 'metric-2', value: 45 }, { name: 'metric-3', value: 66 }];
+            $log.log(scope);
           }
         };
       });

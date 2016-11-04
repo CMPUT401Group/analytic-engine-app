@@ -79,6 +79,7 @@ System.register(['app/plugins/sdk', '../css/example-app.css!', '../directives/th
             }).then(function successCallback(response) {
               // this callback will be called asynchronously
               // when the response is available
+              console.log(response);
               $scope.metricResults = response.data;
             }, function errorCallback(response) {
               // called asynchronously if an error occurs

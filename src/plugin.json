@@ -36,8 +36,6 @@
     {"type": "dashboard", "name": "Analytic Engine App Dashboard", "path": "dashboards/analytic-engine-home.json"},
     {"type": "panel", "name": "Analytic Engine App Panel"},
     {"type": "datasource", "name": "Analytic Engine App Datasource"},
-    { "type": "page", "name": "Stream", "component": "StreamPageCtrl", "role": "Viewer", "addToNav": true},
-    { "type": "page", "name": "Logs", "component": "LogsPageCtrl", "role": "Viewer", "addToNav": true},
     { "type": "page", "name": "Threshold", "component": "ThresholdPageCtrl", "role": "Viewer", "addToNav": true},
     { "type": "page", "name": "ThresholdResult", "component": "ThresholdResultPageCtrl", "role": "Viewer", "addToNav": false}
   ],

@@ -5,11 +5,8 @@ import '../directives/metric-results';
 
 class ExampleAppPanelCtrl extends PanelCtrl {
 
-  constructor($scope, $injector, $http, $httpProvider, backendSrv) {
-    super($scope, $injector, $http, $httpProvider, backendSrv);
-
-    $httpProvider.defaults.useXDomain = true;
-    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+  constructor($scope, $injector, $http, backendSrv) {
+    super($scope, $injector, $http, backendSrv);
 
     this.backendSrv = backendSrv;
 
@@ -24,7 +21,7 @@ class ExampleAppPanelCtrl extends PanelCtrl {
       let url = config.jsonData.analyticEngineURL;
       $http({
         method: 'GET',
-        url: `${url}/pattern/threshold`
+        url: `${url}/analytic-engine/pattern/threshold`
       }).then(function successCallback(response) {
         // this callback will be called asynchronously
         // when the response is available

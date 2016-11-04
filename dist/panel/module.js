@@ -61,13 +61,10 @@ System.register(['app/plugins/sdk', '../css/example-app.css!', '../directives/me
       _export('PanelCtrl', ExampleAppPanelCtrl = function (_PanelCtrl) {
         _inherits(ExampleAppPanelCtrl, _PanelCtrl);
 
-        function ExampleAppPanelCtrl($scope, $injector, $http, $httpProvider, backendSrv) {
+        function ExampleAppPanelCtrl($scope, $injector, $http, backendSrv) {
           _classCallCheck(this, ExampleAppPanelCtrl);
 
-          var _this = _possibleConstructorReturn(this, (ExampleAppPanelCtrl.__proto__ || Object.getPrototypeOf(ExampleAppPanelCtrl)).call(this, $scope, $injector, $http, $httpProvider, backendSrv));
-
-          $httpProvider.defaults.useXDomain = true;
-          delete $httpProvider.defaults.headers.common['X-Requested-With'];
+          var _this = _possibleConstructorReturn(this, (ExampleAppPanelCtrl.__proto__ || Object.getPrototypeOf(ExampleAppPanelCtrl)).call(this, $scope, $injector, $http, backendSrv));
 
           _this.backendSrv = backendSrv;
 
@@ -78,7 +75,7 @@ System.register(['app/plugins/sdk', '../css/example-app.css!', '../directives/me
             var url = config.jsonData.analyticEngineURL;
             $http({
               method: 'GET',
-              url: url + '/pattern/threshold'
+              url: url + '/analytic-engine/pattern/threshold'
             }).then(function successCallback(response) {
               // this callback will be called asynchronously
               // when the response is available

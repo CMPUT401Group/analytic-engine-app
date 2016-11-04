@@ -61,10 +61,13 @@ System.register(['app/plugins/sdk', '../css/example-app.css!', '../directives/me
       _export('PanelCtrl', ExampleAppPanelCtrl = function (_PanelCtrl) {
         _inherits(ExampleAppPanelCtrl, _PanelCtrl);
 
-        function ExampleAppPanelCtrl($scope, $injector, $http, backendSrv) {
+        function ExampleAppPanelCtrl($scope, $injector, $http, $httpProvider, backendSrv) {
           _classCallCheck(this, ExampleAppPanelCtrl);
 
-          var _this = _possibleConstructorReturn(this, (ExampleAppPanelCtrl.__proto__ || Object.getPrototypeOf(ExampleAppPanelCtrl)).call(this, $scope, $injector, $http, backendSrv));
+          var _this = _possibleConstructorReturn(this, (ExampleAppPanelCtrl.__proto__ || Object.getPrototypeOf(ExampleAppPanelCtrl)).call(this, $scope, $injector, $http, $httpProvider, backendSrv));
+
+          $httpProvider.defaults.useXDomain = true;
+          delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
           _this.backendSrv = backendSrv;
 

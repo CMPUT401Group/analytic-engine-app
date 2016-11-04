@@ -5,8 +5,11 @@ import '../directives/metric-results';
 
 class ExampleAppPanelCtrl extends PanelCtrl {
 
-  constructor($scope, $injector, $http, backendSrv) {
-    super($scope, $injector, $http, backendSrv);
+  constructor($scope, $injector, $http, $httpProvider, backendSrv) {
+    super($scope, $injector, $http, $httpProvider, backendSrv);
+
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
     this.backendSrv = backendSrv;
 

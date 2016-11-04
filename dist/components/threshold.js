@@ -48,6 +48,7 @@ System.register(["../utility"], function (_export, _context) {
           this.from = new Date();
           this.to = new Date();
           this.thresholds = [];
+          updateThreshold();
         }
 
         _createClass(ThresholdPageCtrl, [{

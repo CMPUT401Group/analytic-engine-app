@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-System.register(['../utility'], function (_export, _context) {
+System.register(["../utility"], function (_export, _context) {
   "use strict";
 
   var Utility, _createClass, thresholdResultUrl, ThresholdPageCtrl;
@@ -36,7 +36,7 @@ System.register(['../utility'], function (_export, _context) {
 
       thresholdResultUrl = '/plugins/analytic-engine-app/page/thresholdresult';
 
-      _export('ThresholdPageCtrl', ThresholdPageCtrl = function () {
+      _export("ThresholdPageCtrl", ThresholdPageCtrl = function () {
         function ThresholdPageCtrl($scope, $injector, $http, $log, backendSrv) {
           _classCallCheck(this, ThresholdPageCtrl);
 
@@ -44,14 +44,14 @@ System.register(['../utility'], function (_export, _context) {
           this.$http = $http;
           this.$log = $log;
           this.backendSrv = backendSrv;
-
+          this.metricname = "";
+          this.from = new Date();
+          this.to = new Date();
           this.thresholds = [];
-
-          this.updateThreshold();
         }
 
         _createClass(ThresholdPageCtrl, [{
-          key: 'updateThreshold',
+          key: "updateThreshold",
           value: function updateThreshold() {
             var _this = this;
 
@@ -59,14 +59,14 @@ System.register(['../utility'], function (_export, _context) {
               var url = config.jsonData.analyticEngineURL;
               _this.$http({
                 method: 'GET',
-                url: url + '/pattern/threshold'
+                url: url + "/pattern/threshold"
               }).then(function (response) {
                 // TODO: for now we only handle threshold with one pattern inside. Note,
                 //       a single threshold pattern can hold many threshold inside. Refactor?
                 _this.thresholds = response.data.map(function (threshold) {
                   threshold = threshold.pattern[0];
                   var params = Utility.objToURLParam(threshold);
-                  threshold.url = thresholdResultUrl + '?' + params;
+                  threshold.url = thresholdResultUrl + "?" + params;
                   return threshold;
                 });
               }, function (response) {
@@ -76,7 +76,7 @@ System.register(['../utility'], function (_export, _context) {
             });
           }
         }, {
-          key: 'getConfig',
+          key: "getConfig",
           value: function getConfig(cb) {
             this.backendSrv.get('api/plugins/analytic-engine-app/settings').then(function (config) {
               cb(config);
@@ -89,7 +89,7 @@ System.register(['../utility'], function (_export, _context) {
 
       ThresholdPageCtrl.templateUrl = 'components/threshold.html';
 
-      _export('ThresholdPageCtrl', ThresholdPageCtrl);
+      _export("ThresholdPageCtrl", ThresholdPageCtrl);
     }
   };
 });

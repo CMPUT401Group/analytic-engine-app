@@ -1,4 +1,22 @@
 <div>
+
+    <div class="gf-form max-width-28">
+        <input class="gf-form-input input-large ng-pristine ng-valid ng-not-empty ng-touched" type="text" ng-model="ctrl.metricname">
+    </div>
+
+    <div class="gf-form max-width-28">
+        <input class="gf-form-input input-large ng-pristine ng-valid ng-not-empty ng-touched" type="date" ng-model="ctrl.from">
+    </div>
+
+    <div class="gf-form max-width-28">
+        <input class="gf-form-input input-large ng-pristine ng-valid ng-not-empty ng-touched" type="date" ng-model="ctrl.to">
+    </div>
+
+
+    <div class="gf-form">
+        <button class="btn gf-form-btn btn-secondary" ng-click="ctrl.updateThreshold();">Apply</button>
+    </div>
+
     <div class="page-header">
         <h1 class="rt-h1">Threshold Patterns</h1>
     </div>

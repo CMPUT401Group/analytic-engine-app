@@ -8,10 +8,11 @@ class ThresholdPageCtrl {
     this.$http = $http;
     this.$log = $log;
     this.backendSrv = backendSrv;
-
+    this.metricname="";
+    this.from = new Date();
+    this.to = new Date();
     this.thresholds = [];
 
-    this.updateThreshold();
   }
 
   updateThreshold() {

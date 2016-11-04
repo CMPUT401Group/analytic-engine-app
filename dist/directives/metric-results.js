@@ -1,6 +1,6 @@
 'use strict';
 
-System.register(['lodash', 'angular'], function (_export, _context) {
+System.register(['lodash', 'angular', './metric-entry'], function (_export, _context) {
   "use strict";
 
   var _, angular;
@@ -10,7 +10,7 @@ System.register(['lodash', 'angular'], function (_export, _context) {
       _ = _lodash.default;
     }, function (_angular) {
       angular = _angular.default;
-    }],
+    }, function (_metricEntry) {}],
     execute: function () {
 
       angular.module('grafana.directives').directive("metricResults", function ($log) {
@@ -21,7 +21,7 @@ System.register(['lodash', 'angular'], function (_export, _context) {
           },
           replace: true,
           link: function link(scope) {
-            scope.metricResults = [{ name: 'metric-1', value: 23 }, { name: 'metric-2', value: 45 }, { name: 'metric-3', value: 66 }];
+            scope.results = [{ name: 'metric-1', value: 23 }, { name: 'metric-2', value: 45 }, { name: 'metric-3', value: 66 }];
           }
         };
       });

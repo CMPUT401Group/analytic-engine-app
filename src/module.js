@@ -3,6 +3,7 @@ import {StreamPageCtrl} from './components/stream';
 import {AnalyticEngineAppConfigCtrl} from './components/config';
 
 import './directives/metric-entry';
+import './directives/metric-results';
 
 export {
   AnalyticEngineAppConfigCtrl as ConfigCtrl,

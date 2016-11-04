@@ -6,7 +6,7 @@ angular.module('grafana.directives').directive("metricEntry", function($log) {
     templateUrl: 'public/plugins/analytic-engine-app/directives/metric-entry.html',
     scope: {
       metricName: '@',
-      correlation: '@'
+      value: '@'
     },
     replace: true,
     link(scope) {

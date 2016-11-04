@@ -1,6 +1,6 @@
 'use strict';
 
-System.register(['app/plugins/sdk', '../css/example-app.css!', '../directives/metric-entry'], function (_export, _context) {
+System.register(['app/plugins/sdk', '../css/example-app.css!', '../directives/metric-results'], function (_export, _context) {
   "use strict";
 
   var PanelCtrl, ExampleAppPanelCtrl;
@@ -38,7 +38,7 @@ System.register(['app/plugins/sdk', '../css/example-app.css!', '../directives/me
   return {
     setters: [function (_appPluginsSdk) {
       PanelCtrl = _appPluginsSdk.PanelCtrl;
-    }, function (_cssExampleAppCss) {}, function (_directivesMetricEntry) {}],
+    }, function (_cssExampleAppCss) {}, function (_directivesMetricResults) {}],
     execute: function () {
       _export('PanelCtrl', ExampleAppPanelCtrl = function (_PanelCtrl) {
         _inherits(ExampleAppPanelCtrl, _PanelCtrl);
@@ -52,7 +52,7 @@ System.register(['app/plugins/sdk', '../css/example-app.css!', '../directives/me
         return ExampleAppPanelCtrl;
       }(PanelCtrl));
 
-      ExampleAppPanelCtrl.template = '<h2 class="analytic-engine-app-heading"></h2>' + '<div class="card-section card-list-layout-list" layout-mode>' + '  <ol class="card-list" >' + '    <metric-entry data-metric-name="metric1" data-correlation="69"></metric-entry>' + '    <metric-entry data-metric-name="metric2" data-correlation="69"></metric-entry>' + '    <metric-entry data-metric-name="metric3" data-correlation="69"></metric-entry>' + '    <metric-entry data-metric-name="metric4" data-correlation="69"></metric-entry>' + '  </ol>' + '</div>';
+      ExampleAppPanelCtrl.template = '<h2 class="analytic-engine-app-heading"></h2>' + '<metric-results></metric-results>';
 
       _export('PanelCtrl', ExampleAppPanelCtrl);
     }

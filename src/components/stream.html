@@ -5,6 +5,23 @@
 
 <!--p>Custom page for app. Add anything you would like</p-->
 
+<div class="gf-form max-width-28">
+    <input class="gf-form-input input-large ng-pristine ng-valid ng-not-empty ng-touched" type="text" ng-model="ctrl.metricname">
+</div>
+
+<div class="gf-form max-width-28">
+    <input class="gf-form-input input-large ng-pristine ng-valid ng-not-empty ng-touched" type="date" ng-model="ctrl.from" >
+</div>
+
+<div class="gf-form max-width-28">
+    <input class="gf-form-input input-large ng-pristine ng-valid ng-not-empty ng-touched" type="date" ng-model="ctrl.to" >
+</div>
+
+
+<div class="gf-form">
+    <button class="btn gf-form-btn btn-secondary" type="submit" ng-click="ctrl.search();">Apply</button>
+</div>
+
 <div ng-if="!ctrl.pageReady" class="rt-loading-message-container">
     <div class="rt-loading-message-inside">
         <!-- img class="rt-loading-pulse" src="public/plugins/raintank-worldping-app/img/loading-pulse.svg" style="margin-bottom: 10px;"-->
@@ -16,10 +33,6 @@
 
 <section class="card-section" layout-mode>
     <layout-selector></layout-selector>
-
-    <div ng-if="ctrl.probes.length === 0">
-        <em>No probes found</em>
-    </div>
     <ol class="card-list">
         <li class="card-item-wrapper" ng-repeat="probe in ctrl.probes">
             <a class="card-item" ng-href="{{ctrl.isOrgAdmin ? 'plugins/raintank-worldping-app/page/probe-details?probe='+probe.id : ''}}">

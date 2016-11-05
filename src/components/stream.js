@@ -24,7 +24,9 @@ class StreamPageCtrl {
 
             self.pageReady = true;
 
-            self.results = resp.body;
+            self.results = resp.data.map(threshold => {
+                return threshold.pattern[0];
+            });
 
         });
 

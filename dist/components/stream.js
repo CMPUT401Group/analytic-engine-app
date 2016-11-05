@@ -58,7 +58,9 @@ System.register(['lodash'], function (_export, _context) {
 
                             self.pageReady = true;
 
-                            self.results = resp.body;
+                            self.results = resp.data.map(function (threshold) {
+                                return threshold.pattern[0];
+                            });
                         });
                     }
                 }]);
